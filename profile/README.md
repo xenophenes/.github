@@ -85,6 +85,7 @@ For teams that want more, the Forward Deployed Engineer service adds a dedicated
 - [Blog](https://www.pgedge.com/blog)
 - [Webinars](https://www.pgedge.com/webinars)
 - [YouTube](https://www.youtube.com/@pgEdge)
+- [Demos](https://www.pgedge.com/demo-video)
 - [FAQ](https://www.pgedge.com/resources/faq)
 - [pgScorecard](https://pgscorecard.com) - a framework for comparing how closely Postgres distributions track community Postgres. (pgEdge scores 100%.)
 

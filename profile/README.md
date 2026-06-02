@@ -1,70 +1,99 @@
 [![github_banner](https://github.com/user-attachments/assets/a1095d63-da3c-4f09-9f93-fea11822a42f)](https://www.pgedge.com/get-started/platform)
 
+# pgEdge
 
-<div align="center">
-  <a href="https://www.pgedge.com">Website</a> •
-  <a href="#quickstart">Quickstart</a> •
-  <a href="#deployment">Deployment Options</a> •
-  <a href="#developer-resources">Developer Resources</a> •
-  <a href="#contactus">Contact Us</a> •
-  <a href="#social">Social Media</a>
-</div>
+**Write anywhere. Read anywhere.** pgEdge is 100% open-source Distributed Postgres, under the PostgreSQL License, for Agentic AI app development and applications that need reliable multi-region high availability while still running 100% community Postgres.
 
-##
+We're a team of PostgreSQL contributors, committers, and longtime community members who came here because distributed Postgres is genuinely interesting. Our CTO [Dave Page](https://github.com/dpage) is a PostgreSQL core team member and the creator of pgAdmin - he'll tell you distributed databases were the subject of his master's dissertation, and he's not joking. In September 2025 we re-licensed our core extensions - Spock, Snowflake, and lolor - from a proprietary license to the PostgreSQL License, because open source isn't a strategy for us. It's just how we think Postgres should work.
 
-With pgEdge, get 100% open-source, enterprise-grade Postgres out-of-the-box designed for performance and enterprise-grade functionality at any scale.
+Everything here is 100% open-source. No catch.
 
-pgEdge delivers PostgreSQL solutions for agentic AI application development, maximum high availability, ultra-low latency, zero downtime maintenance, and data residency across deployment options and cloud regions. Single instances can be scaled up to active-active (multi-master) distributed deployments in a matter of minutes, giving you the freedom and flexibility to shift your data needs for your business instantly.
+**[Get started →](https://www.pgedge.com/get-started)** - instant access to all pgEdge products across VM, bare metal, Kubernetes, Docker, and fully managed cloud. Pick your deployment, get your code.
 
-Proudly 100% open-source (under the OSI-approved [PostgreSQL license](https://www.postgresql.org/about/licence/)) and [100% PostgreSQL compatible](https://pgscorecard.com/), we're here to help you enable scalable, flexible, and fault-tolerant Postgres deployments no matter where your clusters are - with no vendor lock-in.
+---
 
-pgEdge stays up-to-date with the latest PostgreSQL releases with same-day patches, ensuring that all the most recent enhancements, bug fixes, and security updates for each release are available without delay.
+## Products
 
-<a id="quickstart"></a>
-## Quickstart
+### [pgEdge Enterprise Postgres](https://www.pgedge.com/products/what-is-pgedge-enterprise-postgres)
+A complete Postgres distribution (v16–18) bundling Spock, lolor, Snowflake Sequences, pgVector, pgCat, pgBackRest, PostGIS, and 20+ extensions, deployable on VMs, bare metal, Kubernetes, Docker, or on-premises. Same-day patches for every PostgreSQL release - enhancements, bug fixes, and security updates without delay.
+[Download](https://www.pgedge.com/download/enterprise-postgres) · [GitHub](https://github.com/pgEdge)
 
-All of our tools & extensions for PostgreSQL are available to self-host here on GitHub. However, if you'd like a more out-of-the-box setup, you can [download pgEdge Enterprise Postgres](https://www.pgedge.com/get-started) through the secure installer on our website. Still free and open-source, with community PostgreSQL, pgAdmin, pgBouncer, and pgBackRest installed alongside all pgEdge tools & products for a complete enterprise-ready stack.
+### [pgEdge Cloud](https://www.pgedge.com/products/pgedge-cloud)
+Fully managed distributed Postgres DBaaS, built on Spock for active-active multi-region replication.
+[Learn more](https://www.pgedge.com/products/pgedge-cloud) · [Free trial](https://app.pgedge.com) · [Terraform](https://github.com/pgEdge/terraform-provider-pgedge) · [Pulumi](https://github.com/pgEdge/pulumi-pgedge)
 
-Check out the [pgEdge Enterprise Postgres documentation](https://docs.pgedge.com/enterprise/) to learn more about what's included.
+### [pgEdge Agentic AI Toolkit](https://www.pgedge.com/products/agentic-ai-postgres)
+Free, open-source tools for building AI agents on Postgres: [pgedge-postgres-mcp](https://github.com/pgEdge/pgedge-postgres-mcp) (MCP Server, pre-release), [pgedge-rag-server](https://github.com/pgEdge/pgedge-rag-server) (RAG Server), [pgedge-vectorizer](https://github.com/pgEdge/pgedge-vectorizer) (Postgres extension for async text chunking and embedding generation via background workers), and [pgedge-docloader](https://github.com/pgEdge/pgedge-docloader) (Document Loader). Available in pgEdge Cloud. Ellie, the AI assistant on [pgedge.com](https://www.pgedge.com) and [docs.pgedge.com](https://docs.pgedge.com), runs on this stack.
+[Get started](https://www.pgedge.com/products/agentic-ai-postgres) · [GitHub](https://github.com/pgEdge)
 
-<a id="deployment"></a>
-## Deployment options
+### [pgEdge AI DBA Workbench](https://www.pgedge.com/products/ai-dba-workbench)
+Free, open-source, agentless Postgres monitoring and AI-assisted diagnosis for any Postgres 14+ - including Amazon RDS, Supabase, Cloud SQL for PostgreSQL, Azure Flexible Server, and community Postgres. Ships with Ellie (an optional AI assistant), 21 MCP tools, persistent memory, and 3-tier anomaly detection.
+[Download](https://www.pgedge.com/download/ai-dba-workbench) · [GitHub](https://github.com/pgEdge/ai-dba-workbench)
 
-We offer virtual machine, bare metal, Kubernetes, Docker, and fully-managed cloud deployment options for all of our offerings. The [pgEdge Developer Hub](https://www.pgedge.com/get-started) on our website will walk you through how to get started from the all-in-one pgEdge Enterprise Postgres installation option. Otherwise, check out the installation instructions for each repository if you are individually setting up different tools & extensions.
+---
 
-Another way to manage your PostgreSQL clusters with pgEdge components is to use the [Control Plane](https://github.com/pgEdge/control-plane), a declarative API that is designed to simplify the management and orchestration of Postrges databases. Written in Golang, with a Docker Compose setup available for easily setting up a local development environment.
+## Core Extensions
 
-### Integrations 
+These are the building blocks of pgEdge Distributed Postgres. All three were re-licensed to the PostgreSQL License in September 2025 - feel free to use them, fork them, and contribute.
 
-- Install pgEdge Postgres using a [Helm chart](https://github.com/pgEdge/pgedge-helm) to deploy quickly on Kubernetes.
-- Leverage [Postgres images built from pgEdge Enterprise packages](https://github.com/pgEdge/postgres-images)
-- [Prefer using Ansible to deploy infrastructure and cluster resources?](https://github.com/pgEdge/pgedge-ansible) This collection will build a Postgres cluster for you that can be globally distributed for database operations at the edge.
-- Working with [Terraform](https://github.com/pgEdge/terraform-provider-pgedge)? Our pgEdge Cloud Terraform provider is designed for seamless use.
-- Simplify the management of pgEdge Cloud resources using infrastructure as code with the [official Pulumi provider for pgEdge Cloud](https://github.com/pgEdge/pulumi-pgedge).
+| Repo | What it does |
+|---|---|
+| [spock](https://github.com/pgEdge/spock) | Multi-master logical replication for Postgres 15–18. The engine behind pgEdge Distributed Postgres. |
+| [snowflake](https://github.com/pgEdge/snowflake) | Globally unique int8 IDs for distributed writes - a drop-in replacement for `bigserial`. |
+| [lolor](https://github.com/pgEdge/lolor) | Large Object Logical Replication for Postgres 16+. |
 
-<a id="devresources"></a>
-## Developer Resources
+No compatibility layer. Just Postgres.
 
-- [Documentation](https://docs.pgedge.com)
-- [FAQ](https://www.pgedge.com/resources/faq)
+---
+
+## Developer Tools
+
+| Repo | What it does |
+|---|---|
+| [pgedge-anonymizer](https://github.com/pgEdge/pgedge-anonymizer) | PII anonymization for Postgres with 100+ patterns covering 19 countries. |
+| [pgedge-loadgen](https://github.com/pgEdge/pgedge-loadgen) | Realistic Postgres workload generator across 7 app types, including pgvector workloads. |
+
+---
+
+## Infrastructure & Deployment
+
+| Repo | What it does |
+|---|---|
+| [control-plane](https://github.com/pgEdge/control-plane) | Declarative Postgres cluster management API, written in Go. |
+| [pgedge-helm](https://github.com/pgEdge/pgedge-helm) | Helm chart for deploying pgEdge clusters on Kubernetes. |
+| [postgres-images](https://github.com/pgEdge/postgres-images) | Container images built from pgEdge Enterprise packages. |
+| [pgedge-ansible](https://github.com/pgEdge/pgedge-ansible) | Ansible collection for building and managing distributed pgEdge clusters. |
+| [terraform-provider-pgedge](https://github.com/pgEdge/terraform-provider-pgedge) | Terraform provider for pgEdge Cloud. |
+| [pulumi-pgedge](https://github.com/pgEdge/pulumi-pgedge) | Pulumi provider for pgEdge Cloud. |
+
+---
+
+## Support
+
+The people who answer support tickets at pgEdge are the same people who wrote PostgreSQL books, contributed patches upstream, and speak at Postgres conferences, including PGConf.dev. 24x7x365 coverage for pgEdge Enterprise Postgres, with diagnostics, recovery assistance, bug fixes for core Postgres and approved extensions, and access to the pgEdge knowledge base.
+
+For teams that want more, the Forward Deployed Engineer service adds a dedicated point of contact, performance tuning, architecture reviews, and quarterly check-ins.
+
+[Postgres support services](https://www.pgedge.com/support)
+
+---
+
+## Resources
+
+- [Get started](https://www.pgedge.com/get-started) - VM, bare metal, Kubernetes, Docker, fully managed cloud
+- [Docs](https://docs.pgedge.com)
 - [Blog](https://www.pgedge.com/blog)
-- [Demos](https://www.pgedge.com/demo-video)
-- [YouTube](https://www.youtube.com/@pgEdge)
 - [Webinars](https://www.pgedge.com/webinars)
+- [YouTube](https://www.youtube.com/@pgEdge)
+- [Demos](https://www.pgedge.com/demo-video)
+- [FAQ](https://www.pgedge.com/resources/faq)
+- [pgScorecard](https://pgscorecard.com) - a framework for comparing how closely Postgres distributions track community Postgres. (pgEdge scores 100%.)
 
-<a id="contactus"></a>
-## Contact us, anytime
+---
 
-We provide [24/7 customer service](https://www.pgedge.com/support) for customers with thanks to our amazing team of experts, that includes contributors to the PostgreSQL ecosystem.
+## Community
 
-If you have any specific questions about pgEdge in general, you can always [get in touch](https://www.pgedge.com/contact) and we're happy to help.
-
-Otherwise, for technical questions, we're active on [Discord](https://discord.com/invite/pgedge/login) and are happy to help answer any queries there.
-
-<a id="social"></a>
-### Find us on social media
-
+- [Discord](https://discord.com/invite/pgedge/login)
 - [LinkedIn](https://www.linkedin.com/company/pgedge/)
 - [Mastodon](https://mastodon.social/@pgEdgeDistributedPostgres)
-- [Discord](https://discord.com/invite/pgedge/login)
 - [X](https://twitter.com/pgEdgeInc)
